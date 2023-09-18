@@ -36,7 +36,8 @@ export class JogosService {
         
     // POST A GAME
     create(createJogoDto: any){
-        return this.jogos.push(createJogoDto)
+        return this.jogos.push(createJogoDto) && `Jogo criado. `
+        
     }
 
     // PATCH A GAME
@@ -44,6 +45,8 @@ export class JogosService {
         const indexJogo = this.jogos.findIndex((jogo) => jogo.id == Number(id));
         
         this.jogos[indexJogo] = updateJogoDto;
+
+        return `Jogo ${id} atualizado`
     }
 
     // REMOVE A GAME
